@@ -3,11 +3,10 @@ import { AddCategory, GifGrid } from './components';
 
 const GifExpertApp = () => {
 
-    const [categories, setCategories] = useState(['One Punch']);
+    const [categories, setCategories] = useState(['One Pice']);
 
-    const onAddCategory = (newCategory) => {
+    const onAddCategory = ( newCategory ) => {
         if (categories.includes(newCategory)) {
-            alert("Categoria existente!!");
             return;
         }
         setCategories([newCategory, ...categories]);

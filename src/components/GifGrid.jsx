@@ -1,8 +1,12 @@
 import { GifItem } from './GifItem';
 import useFetchGifs from '../hooks/useFetchGifs';
+import { validateProps } from '../utils/validateProps';
+import { isStringRequired } from '../utils/validators';
 
 
 export const GifGrid = ({ category }) => {
+
+    validateProps({category}, {category: isStringRequired });
 
     const {images, isLoading} = useFetchGifs( category );
 
@@ -23,5 +27,3 @@ export const GifGrid = ({ category }) => {
         </>
     )
 }
-
-// export default GifGrid
